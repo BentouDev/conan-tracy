@@ -19,12 +19,14 @@ workspace "tracy"
     project "tracy"
         kind("StaticLib")
 
+        defines { "TRACY_ENABLE" }
+
         includedirs {
             "common",
-            "client"
+            "client",
+            "."
         }
 
         files {
-            "client/**.cpp",
             "TracyClient.cpp"
         }
